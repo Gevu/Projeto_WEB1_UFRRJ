@@ -1,0 +1,6 @@
+Relações
+
+- Cliente (_Matricula_, Nome, E-mail, Data_Nasc, Senha, Campus, Curso, Tipo)
+- Projeto (_Id_, Nome, Curso, Horas_Conc, Certificado_Conc)
+- Relatório (_Id_, Aluno, Data_Env, Horas_Atr, Validado, Matricula*, Id_Projeto*)
+- Participa (Matricula*, Id_Projeto*)
