@@ -22,6 +22,12 @@ h3::before {
   background: #ffff;
 }
 
+/* Estilização da mensagem de erro */
+.error {
+  color: rgb(255, 51, 51);
+  font-size: 13px;
+}
+
 /*Estilizações do bloco*/
 .cadastro {
   background-color: #033665;
@@ -40,7 +46,7 @@ h3::before {
 }
 
 /*Botão*/
-button {
+input[type=submit] {
   color: #ffff;
   background-color: #010b16;
   width: 130px;
@@ -48,7 +54,7 @@ button {
   border: none;
 }
 
-button:hover {
+input[type=submit]:hover {
   cursor: pointer;
   background-color: #ffff;
   color: #010b16;
