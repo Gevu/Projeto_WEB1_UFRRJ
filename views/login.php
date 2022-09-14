@@ -1,3 +1,5 @@
+<?php include("../scripts/login_cliente.php"); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,19 +22,21 @@
   </div>
 
   <div class="blocos">
-    <div class="login">
-      <h3>Entrar</h3>
-      <input type="email" placeholder="E-mail" class="box">
-      <br><br>
-      <input type="password" placeholder="Senha" class="box">
-      <p>Esqueceu a senha? <a href="/">Clique aqui.</a></p>
-      <a href="./aluno.html"><input type="submit" value="Login" class="botaolog"></a>
-    </div>
+      <div class="login">
+        <h3>Entrar</h3>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+          <input type="email" name="email" placeholder="E-mail" class="box">
+          <br><br>
+          <input type="password" name="senha" placeholder="Senha" class="box">
+          <p>Esqueceu a senha? <a href="/">Clique aqui.</a></p>
+          <input type="submit" value="Login" class="botaolog">
+        </form>
+      </div>
 
     <div class="cadastro">
       <h3>Cadastre-se</h3>
       <p>Ainda não possui um conta, registre-se para fazer parte de um projeto de extensão.</p>
-      <a href="./cadastro.html"><button type="button">Crie uma conta</button></a>
+      <a href="./cadastro.php"><button type="button">Crie uma conta</button></a>
     </div>
   </div>
 

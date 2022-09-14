@@ -1,5 +1,7 @@
 <?php 
 
+include('../scripts/connect.php');
+
 $name = $email = $date = $senha = $matricula = $campus = $curso = $cargo = "";
 $nameErr = $emailErr = $dateErr = $senhaErr = $matriculaErr = $campusErr = $cursoErr = $cargoErr = "";
 
@@ -32,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["senha"])) {
         $senhaErr = "* Senha obrigatória <br>";
     } else {
-        $senha = input_data($_POST["senha"]);
+        $senha = $conn->real_escape_string(trim(md5($_POST["senha"])));
     }
 
     if (empty($_POST["matricula"])) {
@@ -68,7 +70,7 @@ function input_data($data) {
     $data = stripslashes($data);  
     $data = htmlspecialchars($data);  
     return $data;  
-} 
+}
 
 if ($nameErr == "" && 
     $emailErr == "" &&
@@ -80,13 +82,15 @@ if ($nameErr == "" &&
     $cargoErr == "") {
     include_once("../scripts/connect.php");
 
-    $secure_senha = password_hash($senha, PASSWORD_BCRYPT);
+    //$secure_senha = password_hash($senha, PASSWORD_BCRYPT);
 
     $result_usuarios = "INSERT INTO cliente (Matricula, Nome, Email, Data_de_Nascimento, Senha, Campus, Curso, Cargo) 
-                       VALUES ('$matricula', '$name', '$email', '$date', '$secure_senha', '$campus', '$curso', '$cargo')";
+                       VALUES ('$matricula', '$name', '$email', '$date', '$senha', '$campus', '$curso', '$cargo')";
     $result_usuarios = mysqli_query($conn, $result_usuarios);
+
+    mysqli_close($conn);
     
-    header('Location: ../views/login.html');
+    //header('Location: ../views/login.html');
 }
 
 ?>

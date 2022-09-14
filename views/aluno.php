@@ -1,5 +1,12 @@
+<?php
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +23,7 @@
     </div>
 
     <div class="cabecalho">
-        <h2>Olá, João Vítor Feijó!</h2>
+        <h2>Olá, <?php echo $_SESSION['nome'];?>!</h2>
     </div>
 
     <div class="flex_container_global">
