@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nameErr = "* Nome obrigatório <br>";
     } else {
         $name = input_data($_POST["name"]);
-        if (!preg_match("/^[a-zA-z]*$/", $name)) {
+        if (!preg_match("/^[\w]*$/", $name)) {
             $nameErr = "* Apenas letras e espaços em branco são permitidos <br>";
         }
     }
@@ -72,6 +72,9 @@ function input_data($data) {
     return $data;  
 }
 
+// A condição "$matricula != """ bloqueia um cadastro indesejado que acontecia sempre que abriamos
+// a página "cadastro.php" pela primeira vez.
+
 if ($nameErr == "" && 
     $emailErr == "" &&
     $dateErr == "" &&
@@ -79,10 +82,8 @@ if ($nameErr == "" &&
     $matriculaErr == "" &&
     $campusErr == "" &&
     $cursoErr == "" &&
-    $cargoErr == "") {
-    include_once("../scripts/connect.php");
-
-    //$secure_senha = password_hash($senha, PASSWORD_BCRYPT);
+    $cargoErr == "" &&
+    $matricula != "") {
 
     $result_usuarios = "INSERT INTO cliente (Matricula, Nome, Email, Data_de_Nascimento, Senha, Campus, Curso, Cargo) 
                        VALUES ('$matricula', '$name', '$email', '$date', '$senha', '$campus', '$curso', '$cargo')";

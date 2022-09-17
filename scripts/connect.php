@@ -5,6 +5,6 @@
     $dbname = "projeto_web1";
 
     // Criar a conexão:
-    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+    $conn = mysqli_connect($servidor, $usuario, $senha, $dbname) or die("Erro na conexão.");
 
 ?>

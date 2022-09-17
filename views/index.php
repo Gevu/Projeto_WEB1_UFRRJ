@@ -18,18 +18,7 @@
   <div class="cabecalho">
     <h2>
       Seja bem-vindo!
-      <select name="formal" onchange="javascript:handleSelect(this)">
-        <option value="0" selected disabled>Faça Login</option>
-        <option value="login.php?aluno">Sou Aluno</option>
-        <option value="login.php?resp">Sou Responsável</option>
-        <option value="login.php?coord">Sou Coordenador</option>
-      </select>
-
-      <script type="text/javascript">
-        function handleSelect(elm) {
-          window.location = elm.value + ".html";
-        }
-      </script>
+      <a href="login.php"><button type="button">Faça Login</button></a>
     </h2>
   </div>
 

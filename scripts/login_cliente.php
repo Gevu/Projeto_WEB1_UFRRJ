@@ -30,13 +30,13 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
       $_SESSION['date'] = $usuario['Data_de_Nascimento'];
       $_SESSION['cargo'] = $usuario['Cargo'];
 
-      if (isset($_SESSION)) {
+      if (isset($_SESSION) && $_SESSION['cargo'] == 'Aluno') {
         header('Location: aluno.php');
       }
-      elseif (isset($_SESSION) && isset($_GET['resp'])) {
+      else if (isset($_SESSION) && $_SESSION['cargo'] == 'Professor') {
         header('Location: resp_pag1.php');
       }
-      elseif (isset($_SESSION) && isset($_GET['coord'])) {
+      else if (isset($_SESSION) && $_SESSION['cargo'] == 'Coordenador') {
         header('Location: coordenacao.php');
       }
       

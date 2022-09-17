@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
-<?php include("../scripts/valida_e_insere.php"); ?>
+<?php include("../scripts/cadastro.php"); ?>
 
 <head>
   <meta charset="UTF-8">
@@ -91,5 +91,4 @@
       </div>
     </footer>
 </body>
-
 </html>
