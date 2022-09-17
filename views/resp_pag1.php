@@ -1,3 +1,14 @@
+<?php
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    if(isset($_GET['logout'])) {
+        unset($_SESSION);
+        session_destroy();
+        header("Location: index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,7 +26,7 @@
         <img src="./imagens/rural_logo_branco02.png" alt="logo rural">
     </div>
     <div class="cabecalho">
-        <h2>Olá, Tiago Cruz França!</h2>
+        <h2>Olá, <?php echo $_SESSION['nome'];?>! <a href="?logout"><button type="button">Sair</button></a></h2>
     </div>
     <div class="extensoes">
         <h3>Extensões ativas</h3>

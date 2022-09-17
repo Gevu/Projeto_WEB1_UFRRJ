@@ -18,7 +18,7 @@
 
   <div class="posicionamento">
     <div class="cabecalho">
-      <h2>Crie uma conta</h2>
+      <h2>Crie uma conta <a href="login.php"><button type="button">Faça Login</button></a></h2>
     </div>
 
     <div class="cadastro">

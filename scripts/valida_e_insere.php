@@ -90,7 +90,6 @@ if ($nameErr == "" &&
 
     mysqli_close($conn);
     
-    //header('Location: ../views/login.html');
 }
 
 ?>

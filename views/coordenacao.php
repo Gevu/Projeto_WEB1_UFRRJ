@@ -1,3 +1,14 @@
+<?php
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    if(isset($_GET['logout'])) {
+        unset($_SESSION);
+        session_destroy();
+        header("Location: index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,7 +27,7 @@
   </div>
 
   <div class="cabecalho">
-    <h2>Coordenadoria de Extensão</h2>
+    <h2>Olá, <?php echo $_SESSION['nome'];?>! <a href="?logout"><button type="button">Sair</button></a></h2>
   </div>
 
   <div class="busca">

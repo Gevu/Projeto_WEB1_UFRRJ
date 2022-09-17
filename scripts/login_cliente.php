@@ -24,9 +24,21 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
         session_start();
       }
       $_SESSION['nome'] = $usuario['Nome'];
+      $_SESSION['email'] = $usuario['Email'];
+      $_SESSION['curso'] = $usuario['Curso'];
+      $_SESSION['matricula'] = $usuario['Matricula'];
+      $_SESSION['date'] = $usuario['Data_de_Nascimento'];
       $_SESSION['cargo'] = $usuario['Cargo'];
-      if ($_SESSION['cargo'])
-      header('Location: aluno.php');
+
+      if (isset($_SESSION)) {
+        header('Location: aluno.php');
+      }
+      elseif (isset($_SESSION) && isset($_GET['resp'])) {
+        header('Location: resp_pag1.php');
+      }
+      elseif (isset($_SESSION) && isset($_GET['coord'])) {
+        header('Location: coordenacao.php');
+      }
       
     } else {
       echo "Falha ao logar";

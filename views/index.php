@@ -20,15 +20,14 @@
       Seja bem-vindo!
       <select name="formal" onchange="javascript:handleSelect(this)">
         <option value="0" selected disabled>Faça Login</option>
-        <option value="login1">Sou Aluno</option>
-        <option value="login2">Sou Responsável</option>
-        <option value="login3">Sou Coordenador</option>
+        <option value="login.php?aluno">Sou Aluno</option>
+        <option value="login.php?resp">Sou Responsável</option>
+        <option value="login.php?coord">Sou Coordenador</option>
       </select>
-      
+
       <script type="text/javascript">
-        function handleSelect(elm)
-        {
-            window.location = elm.value+".html";
+        function handleSelect(elm) {
+          window.location = elm.value + ".html";
         }
       </script>
     </h2>
@@ -40,8 +39,8 @@
 
   <div class="sobre">
     <h3>Sobre a CPE:</h3>
-    <p> 
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque placeat sapiente et quam dolorum quia libero, nihil numquam distinctio fugiat! Iusto nihil, eligendi debitis quod nostrum amet quas non assumenda! 
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque placeat sapiente et quam dolorum quia libero, nihil numquam distinctio fugiat! Iusto nihil, eligendi debitis quod nostrum amet quas non assumenda!
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint laudantium perferendis, impedit labore porro at numquam illo voluptas cum rem autem dolorum! Vitae reiciendis eveniet corporis, dolor eaque suscipit dolore.
     </p>
   </div>

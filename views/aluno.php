@@ -2,6 +2,11 @@
     if(!isset($_SESSION)) {
         session_start();
     }
+    if(isset($_GET['logout'])) {
+        unset($_SESSION);
+        session_destroy();
+        header("Location: index.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +28,7 @@
     </div>
 
     <div class="cabecalho">
-        <h2>Olá, <?php echo $_SESSION['nome'];?>!</h2>
+        <h2>Olá, <?php echo $_SESSION['nome'];?>! <a href="?logout"><button type="button">Sair</button></a></h2>
     </div>
 
     <div class="flex_container_global">
@@ -79,11 +84,11 @@
                     <p>Alterar a foto de perfil</p>
                 </figcaption>
             </figure>
-            <p><b>Nome:</b> João Vítor da Fonseca Feijó</p>
-            <p><b>Email:</b></p>
-            <p><b>Matricula:</b></p>
-            <p><b>Data de Nasc.:</b></p>
-            <p><b>Curso:</b></p>
+            <p><b>Nome:</b> <?php echo $_SESSION['nome'];?></p>
+            <p><b>Email: <?php echo $_SESSION['email'];?></b></p>
+            <p><b>Matricula: <?php echo $_SESSION['matricula'];?></b></p>
+            <p><b>Data de Nasc.: <?php echo $_SESSION['date'];?></b></p>
+            <p><b>Curso: <?php echo $_SESSION['curso'];?></b></p>
             <a href="./aluno_atualizardados.html"><button type="button">Atualizar Dados</button></a>
         </div>
     </div>
