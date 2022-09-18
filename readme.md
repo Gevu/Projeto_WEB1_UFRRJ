@@ -24,3 +24,4 @@ O sistema agora deve ter seu back-end desenvolvido com PHP e SQL.
 - João Vítor Feijó - [Github](https://github.com/feijoeu)
 - Lorena Vasconcellos - [Github](https://github.com/lorenaVOM)
 - Lucas Morais - [Github](https://github.com/LucasMVC)
+- Vinicius Gevu - [Github](https://github.com/Gevu)
