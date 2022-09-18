@@ -38,7 +38,7 @@
             <div class="bloco1">
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <label for="matricula">Matrícula do aluno: </label> <br><br>
-                    <input type="text" name="matricula" class="box"> <br>
+                    <input name="matricula" class="box" type="text"> <br>
                     <spam class="error"><?php echo $matriculaErr; ?></spam> <br>
 
                     <label for="projeto">Selecione o projeto:</label><br><br>
