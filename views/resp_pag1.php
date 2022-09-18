@@ -9,6 +9,11 @@
     }
 
     include('../scripts/connect.php');
+
+    function acessarProjeto($id) {
+        $_SESSION['id_projeto'] = $id;
+        header("Location: resp_pag2.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -43,18 +48,21 @@
                     $result_projeto_p = "SELECT Nome FROM projeto WHERE id = '$row[id_projeto]'";
                     $result_projeto_p = mysqli_query($conn, $result_projeto_p);
                     $row_p = mysqli_fetch_array($result_projeto_p);
+                    $id = $row['id_projeto'];
 
-                    echo "<li><p> $row_p[Nome] </p></li>";
+                    echo "<li>
+                            <p class='letrag'> $row_p[Nome] 
+                                <form method='post'>
+                                    <input type='submit' name='$id' value='Acessar'>
+                                </form>
+                            </p>
+                          </li><br>";
+
+                    if (array_key_exists('id', $_POST)) {
+                        acessarProjeto($id);
+                    }
                 }
             ?>
-            <!-- <li>
-                <p class="letrag">Site Educação Física <a href="./resp_pag2.php"><button type="button">Acessar</button></a> </p>
-                <p class="letrap"><span>Resp.:</span> Prof. Tiago Cruz França</p>
-            </li>
-            <li>
-                <p class="letrag">Painel Solar <button type="button">Acessar</button> </p>
-                <p class="letrap"><span>Resp.:</span> Prof. Luiz Maltar Castelo Branco</p>
-            </li> -->
         </ul>
     </div>
     <div class="botoes">

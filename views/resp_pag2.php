@@ -1,3 +1,16 @@
+<?php
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+    if(isset($_GET['logout'])) {
+        unset($_SESSION);
+        session_destroy();
+        header("Location: index.php");
+    }
+
+    include('../scripts/connect.php');
+?>
+
 <!DOCTYPE HTML>
 <html len="pt-br">
 
@@ -15,7 +28,15 @@
         <img src="./imagens/rural_logo_branco02.png" alt="logo rural">
     </div>
     <div class="cabecalho">
-        <h2>Extensão: Site de Educação Física <a href="./resp_pag1.html"><button type="button">Página Inicial</button></a> </h2>
+        <h2>Extensão: 
+            <?php 
+                $id = $_SESSION['id_projeto'];
+                $result_projeto = "SELECT Nome FROM projeto WHERE id = '$id'";
+                $result_projeto = mysqli_query($conn, $result_projeto);
+                $row_p = mysqli_fetch_array($result_projeto);
+                echo $row_p['Nome'];
+            ?>
+        <a href="./resp_pag1.html"><button type="button">Página Inicial</button></a> </h2>
     </div>
     <div class="caixa_maior">
         <div class="participantes">
@@ -34,26 +55,6 @@
         </div>
         <div class="relatorios">
             <h3>Relatórios</h3>
-            <ul>
-                <li>
-                    <p>Rel. Março - João Vitor Feijó <button type="button">Baixar relatório</button></p>
-                    <p><span>Marque para validar:</span>
-                        <input type="checkbox">
-                    </p>
-                </li>
-                <li>
-                    <p>Rel. Abril - João Vitor Feijó <button type="button">Baixar relatório</button></p>
-                    <p><span>Marque para validar:</span>
-                        <input type="checkbox">
-                    </p>
-                </li>
-                <li>
-                    <p>Rel. Maio - João Vitor Feijó <button type="button">Baixar relatório</button></p>
-                    <p><span>Marque para validar:</span>
-                        <input type="checkbox">
-                    </p>
-                </li>
-            </ul>
         </div>
     </div>
     <div class="botao">

@@ -40,7 +40,7 @@ button:hover {
   font-size: medium;
 }
 
-.letrag button {
+.letrag input[type=submit] {
   float: right;
   margin: auto;
   margin-right: 5%;
@@ -68,7 +68,7 @@ span {
   margin-bottom: 5%;
 }
 
-p button {
+input[type=submit] {
   background-color: #033665;
   color: white;
   text-decoration: none;
@@ -80,7 +80,7 @@ p button {
   margin-right: 5%;
 }
 
-p button:hover {
+input[type=submit]:hover {
   cursor: pointer;
   background-color: #010b16;
   color: white;
