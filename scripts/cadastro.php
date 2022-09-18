@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nameErr = "* Nome obrigatório <br>";
     } else {
         $name = input_data($_POST["name"]);
-        if (!preg_match("/^[\w]*$/", $name)) {
+        if (!preg_match("/^[\w\s]*$/", $name)) {
             $nameErr = "* Apenas letras e espaços em branco são permitidos <br>";
         }
     }

@@ -18,10 +18,10 @@ body {
   background-color: white;
   padding-bottom: 0.1%;
   align-items: left;
-  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
-.extensoes button {
+.extensoes input[type=submit] {
   width: 100px;
 }
 
@@ -85,6 +85,23 @@ figure.anonimo:hover figcaption {
   font-size: small;
 }
 
+input[type=submit] {
+  background-color: #033665;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #010b16;
+  color: white;
+  border: none;
+}
+
 button {
   background-color: #033665;
   color: white;
@@ -118,4 +135,9 @@ h3 {
   flex-direction: column;
   margin-left: 25%;
   width: 30%;
+}
+
+span {
+  font-weight: bold;
+  font-size: small;
 }

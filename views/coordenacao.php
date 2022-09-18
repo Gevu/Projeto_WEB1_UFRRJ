@@ -38,7 +38,7 @@
 
   <div class="extensoes">
     <div class="ativas">
-      <h3>Extensões Ativas</h3>
+      <h3>Extensões</h3>
       <ul>
         <li>
           <p>Site Educação Física</p>
@@ -47,22 +47,6 @@
         </li>
         <li>
           <p>Site BSDDAY</p>
-          <p class="responsavel"><span>Resp.:</span> Prof. Tiago França</p>
-          <a href="./coorden-projetos.html"><button type="button">Acessar</button></a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="concluidas">
-      <h3>Extensões Concluídas</h3>
-      <ul>
-        <li>
-          <p>Painel Solar</p>
-          <p class="responsavel"> <span>Resp.:</span> Prof. Tiago França</p>
-          <a href="./coorden-projetos.html"><button type="button">Acessar</button></a>
-        </li>
-        <li>
-          <p>Site Biblioteca</p>
           <p class="responsavel"><span>Resp.:</span> Prof. Tiago França</p>
           <a href="./coorden-projetos.html"><button type="button">Acessar</button></a>
         </li>

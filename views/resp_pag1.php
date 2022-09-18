@@ -45,17 +45,19 @@
                 $result_projeto = mysqli_query($conn, $result_projeto);
 
                 while ($row = mysqli_fetch_array($result_projeto))  { 
-                    $result_projeto_p = "SELECT Nome FROM projeto WHERE id = '$row[id_projeto]'";
+                    $result_projeto_p = "SELECT Nome, Curso FROM projeto WHERE id = '$row[id_projeto]'";
                     $result_projeto_p = mysqli_query($conn, $result_projeto_p);
                     $row_p = mysqli_fetch_array($result_projeto_p);
                     $id = $row['id_projeto'];
 
                     echo "<li>
-                            <p class='letrag'> $row_p[Nome] 
-                                <form method='post'>
-                                    <input type='submit' name='$id' value='Acessar'>
-                                </form>
+                            <p class='letrag'> 
+                                $row_p[Nome] <br>
+                                <span>Curso: $row_p[Curso]</span>
                             </p>
+                            <form method='post'>
+                                <input type='submit' name='$id' value='Acessar'>
+                            </form>
                           </li><br>";
 
                     if (array_key_exists('id', $_POST)) {
