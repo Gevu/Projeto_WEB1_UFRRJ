@@ -58,7 +58,6 @@
                             <form method='post'>
                                 <input type='submit' name='$id' value='Acessar'>
                             </form>
-                            <a href='./resp_pag4.php'><button class='incluir'>Incluir aluno</button></a>
                           </li><br>";
 
                     if (array_key_exists('id', $_POST)) {
@@ -70,6 +69,7 @@
     </div>
     <div class="botoes">
         <a href="./resp_pag3.php"><button class="submit" type="button">Incluir projeto</button></a>
+        <a href='./resp_pag4.php'><button class="submit" type="button">Incluir aluno</button></a>
     </div>
     <footer>
         <div class="rodape">

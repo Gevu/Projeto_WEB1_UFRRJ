@@ -4,33 +4,24 @@ include('../scripts/connect.php');
 
 // VALIDAÇÃO DO PROJETO.
 
-$matriAluno = $nomeAluno = $curso = "";
-$matriAlunoErr = $nomeAlunoErr = $cursoErr = "";
+$matricula = $projeto = "";
+$matriculaErr = $projetoErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    if (empty($_POST["nomeAluno"])) {
-        $nomeAlunoErr = "* Nome obrigatório <br>";
+
+    if (empty($_POST["matricula"])) {
+        $matriculaErr = "* Matricula obrigatória <br>";
     } else {
-        $nomeAluno = input_data($_POST["nomeAluno"]);
-        if (!preg_match("/^[\w]*$/", $nomeAluno)) {
-            $nomeAlunoErr = "* Apenas letras e espaços em branco são permitidos <br>";
+        $matricula = input_data($_POST["matricula"]);
+        if ($matricula > 99999999999 || $matricula < 10000000000) {
+            $matriculaErr = "* Matricula inválida <br>";
         }
     }
 
-    if (empty($_POST["matriALuno"])) {
-        $matriAlunoErr = "* Matricula obrigatória <br>";
+    if ($_POST["projeto"] == "opcao") {
+        $projetoErr = "* Projeto obrigatório <br>";
     } else {
-        $matriAluno = input_data($_POST["matriAluno"]);
-        if ($matriAluno > 99999999999 || $matriAluno < 10000000000) {
-            $matriAlunoErr = "* Matricula inválida <br>";
-        }
-    }
-
-    if ($_POST["curso"] == "opcao") {
-        $cursoErr = "* Curso obrigatório <br>";
-    } else {
-        $curso = input_data($_POST["curso"]);
+        $projeto = input_data($_POST["projeto"]);
     }
 }
 
@@ -43,24 +34,17 @@ function input_data($data) {
 
 // ESCREVE NO BANCO
 
-if ($matriAlunoErr == "" && 
-    $nomeAlunoErr == "" &&
-    $cursoErr == "" &&
-    $matriAluno != "") {
+if ($matriculaErr == "" &&
+    $projetoErr == "" &&
+    $matricula != "") {
 
-    // Escreve o projeto na tabela projeto.
-    $result_projetos = "INSERT INTO projeto (Nome, Curso) 
-                       VALUES ('$nameProj', '$curso')";
-    $result_projetos = mysqli_query($conn, $result_projetos);
-
-    // Pega no banco o id projeto que acabou de ser escrito.
-    $result_idprojeto = "SELECT id FROM projeto WHERE Nome = '$nameProj'";
-    $result_idprojeto = mysqli_query($conn ,$result_idprojeto);
-    $row = mysqli_fetch_array($result_idprojeto);
+    $result_projeto = "SELECT id FROM projeto WHERE Nome = '$projeto'";
+    $result_projeto = mysqli_query($conn, $result_projeto);
+    $row = mysqli_fetch_array($result_projeto);
 
     // Cadastra na tabela do relacionamento.
     $result_participa = "INSERT INTO participa (matri_cliente, id_projeto)
-                        VALUES ('$matriProf','$row[id]')";
+                        VALUES ('$matricula','$row[id]')";
     $result_participa = mysqli_query($conn, $result_participa);
 
     mysqli_close($conn);

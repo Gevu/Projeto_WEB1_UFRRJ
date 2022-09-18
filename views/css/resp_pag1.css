@@ -66,8 +66,9 @@ span {
   margin-top: 2%;
   margin-left: 25%;
   display: flex;
-  gap: 443px;
+  gap: 62%;
   margin-bottom: 5%;
+  margin-right: 25%;
 }
 
 input[type="submit"] {

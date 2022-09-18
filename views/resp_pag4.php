@@ -37,24 +37,30 @@
         <div class="blocos">
             <div class="bloco1">
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                    <label for="matriAluno">Matrícula do aluno: </label> <br><br>
-                    <input name="matriAluno" class="box" type="text"> <br>
-                    <spam class="error"><?php echo $matriAlunoErr; ?></spam> <br>
+                    <label for="matricula">Matrícula do aluno: </label> <br><br>
+                    <input type="text" name="matricula" class="box"> <br>
+                    <spam class="error"><?php echo $matriculaErr; ?></spam> <br>
 
-                    <label for="nomeAluno">Nome do aluno: </label> <br><br>
-                    <input name="nomeAluno" class="box" type="text"> <br>
-                    <spam class="error"><?php echo $nomeAlunoErr; ?></spam> <br>
+                    <label for="projeto">Selecione o projeto:</label><br><br>
+                    <select name="projeto" class="box">
+                    <option value="opcao">Selecione uma opção--</option>
+                    <?php
+                        $matricula_cliente = $_SESSION['matricula']; 
 
-                    <label for="curso">Selecione o curso: </label><br><br>
-                    <select name="curso" class="box">
-                        <option value="opcao">Selecione uma opção --</option>
-                        <option value="agronomia">Agronomia</option>
-                        <option value="geologia">Geologia</option>
-                        <option value="matematica">Matemática</option>
-                        <option value="SI">Sistemas de Informação</option>
-                        <option value="veterinaria">Veterinária</option>
+                        $result_projeto = "SELECT id_projeto FROM participa WHERE matri_cliente = '$matricula_cliente'";
+                        $result_projeto = mysqli_query($conn, $result_projeto);
+
+                        while ($row = mysqli_fetch_array($result_projeto))  { 
+                            $result_projeto_p = "SELECT Nome, Curso FROM projeto WHERE id = '$row[id_projeto]'";
+                            $result_projeto_p = mysqli_query($conn, $result_projeto_p);
+                            $row_p = mysqli_fetch_array($result_projeto_p);
+                            $id = $row['id_projeto'];
+
+                            echo "<option value='".$row_['id']."'>".$row_p['Nome']."</option>";
+                        }
+                    ?>
                     </select> <br>
-                    <spam class="error"><?php echo $cursoErr; ?></spam> <br>
+                    <spam class="error"><?php echo $projetoErr; ?></spam> <br>
                     <input type="submit">
             </div>
         </div>
