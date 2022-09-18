@@ -87,7 +87,6 @@
             <p><b>Matricula:</b> <?php echo $_SESSION['matricula'];?></p>
             <p><b>Data de Nasc.:</b> <?php echo $_SESSION['date'];?></p>
             <p><b>Curso:</b> <?php echo $_SESSION['curso'];?></p>
-            <a href="./aluno_atualizardados.html"><button type="button">Atualizar Dados</button></a>
         </div>
     </div>
 

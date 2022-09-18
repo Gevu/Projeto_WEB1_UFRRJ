@@ -34,13 +34,14 @@ button:hover {
   margin-right: 25%;
   margin-top: 5%;
   margin-bottom: 3.3%;
+  min-height: 400px;
 }
 
 .letrag {
   font-size: medium;
 }
 
-.letrag input[type=submit] {
+.letrag input[type="submit"] {
   float: right;
   margin: auto;
   margin-right: 5%;
@@ -69,7 +70,7 @@ span {
   margin-bottom: 5%;
 }
 
-input[type=submit] {
+input[type="submit"] {
   background-color: #033665;
   color: white;
   text-decoration: none;
@@ -82,7 +83,25 @@ input[type=submit] {
   margin-top: -9%;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #010b16;
+  color: white;
+  border: none;
+}
+
+.incluir {
+  background-color: #033665;
+  color: white;
+  text-decoration: none;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  float: left;
+  margin: auto;
+}
+
+.incluir:hover {
   cursor: pointer;
   background-color: #010b16;
   color: white;

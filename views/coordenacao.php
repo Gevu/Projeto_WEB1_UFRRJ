@@ -41,14 +41,12 @@
       <h3>Extensões</h3>
       <ul>
         <li>
-          <p>Site Educação Física</p>
-          <p class="responsavel"><span>Resp.:</span> Prof. Tiago França</p>
-          <a href="./coorden-projetos.html"><button type="button">Acessar</button></a>
+          <p></p>
+          <p class="responsavel"><span></span></p>
         </li>
         <li>
-          <p>Site BSDDAY</p>
-          <p class="responsavel"><span>Resp.:</span> Prof. Tiago França</p>
-          <a href="./coorden-projetos.html"><button type="button">Acessar</button></a>
+          <p></p>
+          <p class="responsavel"><span></span></p>
         </li>
       </ul>
     </div>
