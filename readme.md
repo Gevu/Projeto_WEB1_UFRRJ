@@ -19,7 +19,7 @@ A descrição completa pode ser encontrada no [link](https://docs.google.com/doc
 
 O sistema agora deve ter seu back-end desenvolvido com PHP e SQL.
 
-## Integrantes do Projeto
+## Integrantes do Projeto.
 
 - João Vítor Feijó - [Github](https://github.com/feijoeu)
 - Lorena Vasconcellos - [Github](https://github.com/lorenaVOM)
